@@ -1,0 +1,60 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mole of tales</title><generator uri="https://gohugo.io">Hugo</generator><link>https://icpmoles.github.io/post/</link><language>it-it</language><author>Iacopo Moles</author><updated>Sun, 15 Dec 2019 23:00:00 UTC</updated><image><url>https://icpmoles.github.io/favicon.png</url></image><item><title>Test for the CMS</title><link>https://icpmoles.github.io/post/almost-done/</link><pubDate>Sun, 15 Dec 2019 23:00:00 UTC</pubDate><author>Iacopo Moles</author><guid>https://icpmoles.github.io/post/almost-done/</guid><description> &lt;p>Provo se usando Forestry immagini e altre robe funzionano&lt;/p>
+&lt;p>&lt;img src="https://icpmoles.github.io/uploads/giphy-7.gif" alt="" />
+&lt;/p>
+&lt;p>Porca puttana Forestry sta per chiudere il servizio di deploy in cloud!&lt;/p>
+&lt;h4 id="update-02072020">&lt;a class="anchor mark-html" href="#update-02072020"># &lt;/a>UPDATE 02/07/2020: &lt;/h4>
+&lt;p>Non lo hanno ancora chiuso credo, il loro blog è così confusionario.&lt;/p>
+&lt;h4 id="update-23082020">&lt;a class="anchor mark-html" href="#update-23082020"># &lt;/a>UPDATE 23/08/2020: &lt;/h4>
+&lt;p>Sto aggiornando alcune parti per il CSP e non funziona più.&lt;/p>
+&lt;h4 id="update-23082020-1">&lt;a class="anchor mark-html" href="#update-23082020-1"># &lt;/a>UPDATE 23/08/2020: &lt;/h4>
+&lt;p>Sono passato alle GitHub Actions per il deploy, grazie a &lt;a href="https://www.jameswright.xyz/post/deploy-hugo-academic-using-githubio/">questa guida&lt;/a>.&lt;/p>
+&lt;p>Sto ancora cercando di aggiustare un conflitto del CSP che non mi permette di usare JS inline senza andare a modificare gli headers (che non posso fare perché GitHub me non lo permette).&lt;/p>
+&lt;p>Ho fixato il &lt;a href="https://www.whatismyreferer.com/">referr http credo&lt;/a>. &lt;a href="https://whatsmyreferer.com/">Secondo test&lt;/a>.&lt;/p>
+&lt;h4 id="update-24082020">&lt;a class="anchor mark-html" href="#update-24082020"># &lt;/a>UPDATE 24/08/2020: &lt;/h4>
+&lt;p>Voglio provare se YT e altri embed funzionano&lt;/p>
+&lt;div class="embed video-player">
+&lt;iframe class="youtube-player" type="text/html" width="100%" height="400"
+src="https://www.youtube-nocookie.com/embed/w7Ft2ymGmfc?color=white&amp;modestbranding&amp;rel=0&amp;playsinline&amp;showinfo=0&amp;controls=2"
+frameborder="0"
+srcdoc="&lt;style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto }span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}&lt;/style>&lt;a href=https://www.youtube-nocookie.com/embed/w7Ft2ymGmfc?color=white&amp;modestbranding&amp;rel=0&amp;playsinline&amp;showinfo=0&amp;controls=2&amp;autoplay=1>&lt;img src=https://img.youtube.com/vi/w7Ft2ymGmfc/hqdefault.jpg loading=lazy >&lt;span>▶&lt;/span>&lt;/a>"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen
+loading="lazy"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">&amp;quot;No one is born hating another person because of the color of his skin or his background or his religion...&amp;quot; &lt;a href="https://t.co/InZ58zkoAm">pic.twitter.com/InZ58zkoAm&lt;/a>&lt;/p>&amp;mdash; Barack Obama (@BarackObama) &lt;a href="https://twitter.com/BarackObama/status/896523232098078720?ref_src=twsrc%5Etfw">August 13, 2017&lt;/a>&lt;/blockquote>
+&lt;style>
+.__h_video {
+position: relative;
+padding-bottom: 56.23%;
+height: 0;
+overflow: hidden;
+width: 100%;
+background: #000;
+}
+.__h_video img {
+width: 100%;
+height: auto;
+color: #000;
+}
+.__h_video .play {
+height: 72px;
+width: 72px;
+left: 50%;
+top: 50%;
+margin-left: -36px;
+margin-top: -36px;
+position: absolute;
+cursor: pointer;
+}
+&lt;/style>
+&lt;div class="s_video_simple __h_video">
+&lt;a href="https://vimeo.com/1.46022717e&amp;#43;08" rel="noopener" target="_blank">
+&lt;img src="https://i.vimeocdn.com/video/544362910_295x166.jpg" srcset="https://i.vimeocdn.com/video/544362910_295x166.jpg 1x, https://i.vimeocdn.com/video/544362910.jpg 2x" alt="The Clock of the Long Now">
+&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div>
+&lt;p>&lt;img src="https://icpmoles.github.io/uploads/giphy-6.gif" alt="Train" title="Infinity" />
+&lt;/p>
+&lt;blockquote style="border-left-color:var(--green);font-style: normal; background:rgba(var(--c-green), var(--alpha))">
+TEst
+&lt;/blockquote></description></item></channel></rss>
