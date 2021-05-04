@@ -1,0 +1,100 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mole of tales</title><generator uri="https://gohugo.io">Hugo</generator><link>https://icpmoles.github.io/post/</link><language>it-it</language><author>Iacopo Moles</author><updated>Tue, 04 May 2021 20:07:30 UTC</updated><image><url>https://icpmoles.github.io/favicon.png</url></image><item><title>Github Pages vs Netlify vs Cloudflare Pages</title><link>https://icpmoles.github.io/post/hosting-comparisons/</link><pubDate>Tue, 04 May 2021 20:07:30 UTC</pubDate><author>Iacopo Moles</author><guid>https://icpmoles.github.io/post/hosting-comparisons/</guid><description> &lt;p>Given the various choices of hosting for your static files you may be unsure which one to pick.&lt;/p>
+&lt;h2 id="github-pages" clas=" mark rss xml">Github Pages&lt;/h2>
+&lt;h3 id="upsides" clas=" mark rss xml">Upsides&lt;/h3>
+&lt;blockquote style="border-left-color:var(--green); background:var(--c-green)" class="quote-color">
+&lt;p>&lt;ul>
+&lt;li>Free&lt;/li>
+&lt;li>Ease of integration with other Github projects&lt;/li>
+&lt;li>One single service for repo and website&lt;/li>
+&lt;/ul>
+&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="downsides" clas=" mark rss xml">Downsides&lt;/h3>
+&lt;blockquote style="border-left-color:var(--red); background:var(--c-red)" class="quote-color">
+&lt;p>&lt;ul>
+&lt;li>Heavy config file based&lt;/li>
+&lt;li>Not easy to setup&lt;/li>
+&lt;li>Hacky configuration, Github Pages was meant to work with Jeykill so it&amp;rsquo;s not exactly optimized for Hugo&lt;/li>
+&lt;li>No plugins&lt;/li>
+&lt;li>No CMS included&lt;/li>
+&lt;li>Only one website per account&lt;/li>
+&lt;/ul>
+&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="netlify" clas=" mark rss xml">Netlify&lt;/h2>
+&lt;h3 id="upsides-1" clas=" mark rss xml">Upsides&lt;/h3>
+&lt;blockquote style="border-left-color:var(--green); background:var(--c-green)" class="quote-color">
+&lt;p>&lt;ul>
+&lt;li>Free&lt;/li>
+&lt;li>Easy configuration with a few clicks&lt;/li>
+&lt;li>Huge support for all the static builders, Hugo included&lt;/li>
+&lt;li>Great UI, useful for beginners and more experienced people too&lt;/li>
+&lt;li>Plugins to integrate your website&lt;/li>
+&lt;li>Authentication integration&lt;/li>
+&lt;li>CMS included&lt;/li>
+&lt;li>Multiple Websites&lt;/li>
+&lt;/ul>
+&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="downsides-1" clas=" mark rss xml">Downsides&lt;/h3>
+&lt;blockquote style="border-left-color:var(--red); background:var(--c-red)" class="quote-color">
+&lt;p>&lt;ul>
+&lt;li>Bandwith limitations&lt;/li>
+&lt;li>You can run out of compile time pretty fast in the free tier&lt;/li>
+&lt;li>(hypothetical) Netlify has not Microsoft or Cloudflare on their back that can support this type of service for free forever, I won&amp;rsquo;t bet on the free service lasting forever (see Forestry)&lt;/li>
+&lt;/ul>
+&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="github-pages-1" clas=" mark rss xml">Github Pages&lt;/h2>
+&lt;h3 id="upsides-2" clas=" mark rss xml">Upsides&lt;/h3>
+&lt;blockquote style="border-left-color:var(--green); background:var(--c-green)" class="quote-color">
+&lt;p>&lt;ul>
+&lt;li>Free&lt;/li>
+&lt;li>Easy configuration with a few clicks&lt;/li>
+&lt;/ul>
+&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="downsides-2" clas=" mark rss xml">Downsides&lt;/h3>
+&lt;blockquote style="border-left-color:var(--red); background:var(--c-red)" class="quote-color">
+&lt;p>&lt;ul>
+&lt;li>They are the new kids on the block, until they can finalize all the configurations some builds that require the extended version of Hugo may fail.&lt;/li>
+&lt;li>The UI still lacks some features at the time of the writing if this article (May 2021) and you can&amp;rsquo;t hack your way out of some situations with configuration files like for Github Pages or Netlify.&lt;/li>
+&lt;/ul>
+&lt;/p>
+&lt;/blockquote></description></item><item><title>How does this blog work?</title><link>https://icpmoles.github.io/post/blog-backend/</link><pubDate>Tue, 30 Mar 2021 14:52:08 UTC</pubDate><author>Iacopo Moles</author><guid>https://icpmoles.github.io/post/blog-backend/</guid><description> &lt;p>Have you ever wondered how this blog is setup?&lt;/p>
+&lt;p> &lt;img src="https://icpmoles.github.io/new.jpg" alt="Diagram" title="Backend for the blog" />
+&lt;/p></description></item><item><title>Test for the CMS</title><link>https://icpmoles.github.io/post/hello-world/</link><pubDate>Sun, 15 Dec 2019 23:00:00 UTC</pubDate><author>Iacopo Moles</author><guid>https://icpmoles.github.io/post/hello-world/</guid><description> &lt;p>Provo se usando Forestry immagini e altre robe funzionano&lt;/p>
+&lt;p> &lt;img src="https://icpmoles.github.io/giphy-7.gif" alt="" />
+&lt;/p>
+&lt;p>Porca puttana Forestry sta per chiudere il servizio di deploy in cloud!&lt;/p>
+&lt;h4 id="update-02072020" clas=" mark rss xml">UPDATE 02/07/2020:&lt;/h4>
+&lt;p>Non lo hanno ancora chiuso credo, il loro blog è così confusionario.&lt;/p>
+&lt;h4 id="update-23082020" clas=" mark rss xml">UPDATE 23/08/2020:&lt;/h4>
+&lt;p>Sto aggiornando alcune parti per il CSP e non funziona più.&lt;/p>
+&lt;h4 id="update-23082020-1" clas=" mark rss xml">UPDATE 23/08/2020:&lt;/h4>
+&lt;p>Sono passato alle GitHub Actions per il deploy, grazie a &lt;a href="https://www.jameswright.xyz/post/deploy-hugo-academic-using-githubio/">questa guida&lt;/a>.&lt;/p>
+&lt;p>Sto ancora cercando di aggiustare un conflitto del CSP che non mi permette di usare JS inline senza andare a modificare gli headers (che non posso fare perché GitHub me non lo permette).&lt;/p>
+&lt;p>Ho fixato il &lt;a href="https://www.whatismyreferer.com/">referr http credo&lt;/a>. &lt;a href="https://whatsmyreferer.com/">Secondo test&lt;/a>.&lt;/p>
+&lt;h4 id="update-24082020" clas=" mark rss xml">UPDATE 24/08/2020:&lt;/h4>
+&lt;p>Voglio provare se YT e altri embed funzionano&lt;/p>
+&lt;div class="embed video-player">
+&lt;iframe class="youtube-player" type="text/html" width="100%" height="400"
+src="https://www.youtube-nocookie.com/embed/w7Ft2ymGmfc?color=white&amp;modestbranding&amp;rel=0&amp;playsinline&amp;showinfo=0&amp;controls=2"
+frameborder="0"
+srcdoc="&lt;style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto }span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}&lt;/style>&lt;a href=https://www.youtube-nocookie.com/embed/w7Ft2ymGmfc?color=white&amp;modestbranding&amp;rel=0&amp;playsinline&amp;showinfo=0&amp;controls=2&amp;autoplay=1>&lt;img src=https://img.youtube.com/vi/w7Ft2ymGmfc/hqdefault.jpg loading=lazy >&lt;span>▶&lt;/span>&lt;/a>"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen
+loading="lazy"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">&amp;quot;No one is born hating another person because of the color of his skin or his background or his religion...&amp;quot; &lt;a href="https://t.co/InZ58zkoAm">pic.twitter.com/InZ58zkoAm&lt;/a>&lt;/p>&amp;mdash; Barack Obama (@BarackObama) &lt;a href="https://twitter.com/BarackObama/status/896523232098078720?ref_src=twsrc%5Etfw">August 13, 2017&lt;/a>&lt;/blockquote>
+&lt;div class="s_video_simple __h_video">
+&lt;a href="https://vimeo.com/1.46022717e&amp;#43;08" rel="noopener" target="_blank">
+&lt;img src="https://i.vimeocdn.com/video/544362910_295x166.jpg" srcset="https://i.vimeocdn.com/video/544362910_295x166.jpg 1x, https://i.vimeocdn.com/video/544362910.jpg 2x" alt="The Clock of the Long Now">
+&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div>
+&lt;p> &lt;img src="https://icpmoles.github.io/giphy-6.gif" alt="Train" title="Infinity" />
+&lt;/p>
+&lt;blockquote style="border-left-color:var(--green); background:var(--c-green)" class="quote-color">
+&lt;p>TEst&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
