@@ -1,0 +1,71 @@
+## Github Pages
+
+### Upsides
+
+{{< quote green >}}
+
+* Free
+* Ease of integration with other Github projects
+* One single service for repo and website
+
+{{< /quote >}}
+
+### Downsides
+
+{{< quote red>}}
+
+* Heavy config file based
+* Not easy to setup
+* Hacky configuration, Github Pages was meant to work with Jeykill so it's not exactly optimized for Hugo
+* No plugins
+* No CMS included
+* Only one website per account
+
+{{< /quote >}}
+
+## Netlify
+
+### Upsides
+
+{{< quote green >}}
+
+* Free
+* Easy configuration with a few clicks
+* Huge support for all the static builders, Hugo included
+* Great UI, useful for beginners and more experienced people too
+* Plugins to integrate your website
+* Authentication integration
+* CMS included
+* Multiple Websites
+
+{{< /quote >}}
+
+### Downsides
+
+{{< quote red>}}
+
+* Bandwith limitations
+* You can run out of compile time pretty fast in the free tier
+* (hypothetical) Netlify has not Microsoft or Cloudflare on their back that can support this type of service for free forever, I won't bet on the free service lasting forever (see Forestry)
+
+{{< /quote >}}
+
+## Github Pages
+
+### Upsides
+
+{{< quote green >}}
+
+* Free
+* Easy configuration with a few clicks
+
+{{< /quote >}}
+
+### Downsides
+
+{{< quote red>}}
+
+* They are the new kids on the block, until they can complete all the configurations some builds that require the extended version of Hugo may fail.
+* The UI still lacks some features at the time of the writing if this article (May 2021) and you can't hack your way out of some situations with configuration files like for Github Pages or Netlify.
+
+{{< /quote >}}
