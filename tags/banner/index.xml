@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>banner on Mole of tales</title><link>https://icpmoles.github.io/tags/banner/</link><description>Recent content in banner on Mole of tales</description><generator>Hugo -- gohugo.io</generator><language>it-it</language><lastBuildDate>Sun, 15 Dec 2019 23:00:00 +0000</lastBuildDate><atom:link href="https://icpmoles.github.io/tags/banner/index.xml" rel="self" type="application/rss+xml"/><item><title>Test for the CMS</title><link>https://icpmoles.github.io/post/hello-world/</link><pubDate>Sun, 15 Dec 2019 23:00:00 +0000</pubDate><guid>https://icpmoles.github.io/post/hello-world/</guid><description>&lt;p>Provo se usando Forestry immagini e altre robe funzionano&lt;/p>
+&lt;video preload="metadata" controls width="100%" poster="https://icpmoles.github.io/post/hello-world/giphy-7_hu2cf8edada0e06e960628ed36e8bab3d9_1818899_filter_14981445726867248513.gif" playsinline class="html-video">
+&lt;source src="https://icpmoles.github.io/post/hello-world/giphy-7.webm" type="video/webm">&lt;track src="https://icpmoles.github.io/post/hello-world/input.en.vtt" kind="subtitles" srclang="nput.en" label="nput.en"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.fr.vtt" kind="subtitles" srclang="nput.fr" label="nput.fr"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.it.vtt" kind="subtitles" srclang="nput.it" label="nput.it"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.ua.vtt" kind="subtitles" srclang="nput.ua" label="nput.ua"/>
+&lt;img src="../../post/hello-world/giphy-7.gif" type="image/gif">
+&lt;/video>
+&lt;p>Porca puttana Forestry sta per chiudere il servizio di deploy in cloud!&lt;/p>
+&lt;h4 id="update-02072020" clas=" mark rss xml">UPDATE 02/07/2020:&lt;/h4>
+&lt;p>Non lo hanno ancora chiuso credo, il loro blog è così confusionario.&lt;/p>
+&lt;h4 id="update-23082020" clas=" mark rss xml">UPDATE 23/08/2020:&lt;/h4>
+&lt;p>Sto aggiornando alcune parti per il CSP e non funziona più.&lt;/p>
+&lt;h4 id="update-23082020-1" clas=" mark rss xml">UPDATE 23/08/2020:&lt;/h4>
+&lt;p>Sono passato alle GitHub Actions per il deploy, grazie a &lt;a href="https://www.jameswright.xyz/post/deploy-hugo-academic-using-githubio/">questa guida&lt;/a>.&lt;/p>
+&lt;p>Sto ancora cercando di aggiustare un conflitto del CSP che non mi permette di usare JS inline senza andare a modificare gli headers (che non posso fare perché GitHub me non lo permette).&lt;/p>
+&lt;p>Ho fixato il &lt;a href="https://www.whatismyreferer.com/">referr http credo&lt;/a>. &lt;a href="https://whatsmyreferer.com/">Secondo test&lt;/a>.&lt;/p>
+&lt;h4 id="update-24082020" clas=" mark rss xml">UPDATE 24/08/2020:&lt;/h4>
+&lt;p>Voglio provare se YT e altri embed funzionano&lt;/p>
+&lt;div class="embed video-player">
+&lt;iframe class="youtube-player" type="text/html" width="100%" height="400"
+src="https://www.youtube-nocookie.com/embed/w7Ft2ymGmfc?color=white&amp;modestbranding&amp;rel=0&amp;playsinline&amp;showinfo=0&amp;controls=2"
+frameborder="0"
+srcdoc="&lt;style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto }span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}&lt;/style>&lt;a href=https://www.youtube-nocookie.com/embed/w7Ft2ymGmfc?color=white&amp;modestbranding&amp;rel=0&amp;playsinline&amp;showinfo=0&amp;controls=2&amp;autoplay=1>&lt;img src=https://img.youtube.com/vi/w7Ft2ymGmfc/hqdefault.jpg loading=lazy >&lt;span>▶&lt;/span>&lt;/a>"
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen
+loading="lazy"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">&amp;quot;No one is born hating another person because of the color of his skin or his background or his religion...&amp;quot; &lt;a href="https://t.co/InZ58zkoAm">pic.twitter.com/InZ58zkoAm&lt;/a>&lt;/p>&amp;mdash; Barack Obama (@BarackObama) &lt;a href="https://twitter.com/BarackObama/status/896523232098078720?ref_src=twsrc%5Etfw">August 13, 2017&lt;/a>&lt;/blockquote>
+&lt;div class="s_video_simple __h_video">
+&lt;a href="https://vimeo.com/4.5878034e&amp;#43;07" rel="noopener" target="_blank">
+&lt;img src="https://i.vimeocdn.com/video/629997474-ba60a9255e947babaddb6ca0117df0ca7aec3f9eba5c13d92b5da6319211a3eb-d_295x166" srcset="https://i.vimeocdn.com/video/629997474-ba60a9255e947babaddb6ca0117df0ca7aec3f9eba5c13d92b5da6319211a3eb-d_295x166 1x, https://i.vimeocdn.com/video/629997474-ba60a9255e947babaddb6ca0117df0ca7aec3f9eba5c13d92b5da6319211a3eb-d_295x166 2x" alt="View from the ISS at Night">
+&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div>
+&lt;video preload="metadata" controls width="100%" poster="https://icpmoles.github.io/post/hello-world/train_hu038a91157c4027a4735ef68be11de6c4_2904677_filter_4488198568593527432.gif" playsinline class="html-video">
+&lt;source src="https://icpmoles.github.io/post/hello-world/train.webm" type="video/webm">&lt;track src="https://icpmoles.github.io/post/hello-world/input.en.vtt" kind="subtitles" srclang="nput.en" label="nput.en"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.fr.vtt" kind="subtitles" srclang="nput.fr" label="nput.fr"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.it.vtt" kind="subtitles" srclang="nput.it" label="nput.it"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.ua.vtt" kind="subtitles" srclang="nput.ua" label="nput.ua"/>
+&lt;img src="../../post/hello-world/train.gif" type="image/gif">
+&lt;/video>
+&lt;blockquote style="border-left-color:var(--green); background:var(--c-green)" class="quote-color">
+&lt;p>TEst&lt;/p>
+&lt;/blockquote>
+&lt;video preload="metadata" controls width="100%" poster="https://icpmoles.github.io/post/hello-world/input_huf358f23f911d737adcfd951fd1017714_59742_filter_5369463751086552754.jpg" playsinline class="html-video">
+&lt;source src="https://icpmoles.github.io/post/hello-world/input.webm" type="video/webm">
+&lt;source src="https://icpmoles.github.io/post/hello-world/input.mp4" type="video/mp4">&lt;track src="https://icpmoles.github.io/post/hello-world/input.en.vtt" kind="subtitles" srclang="en" label="en"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.fr.vtt" kind="subtitles" srclang="fr" label="fr"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.it.vtt" kind="subtitles" srclang="it" label="it"/>&lt;track src="https://icpmoles.github.io/post/hello-world/input.ua.vtt" kind="subtitles" srclang="ua" label="ua"/>&lt;a href="https://icpmoles.github.io/post/hello-world/input.mp4"> &lt;img src="https://icpmoles.github.io/post/hello-world/input_huf358f23f911d737adcfd951fd1017714_59742_91dda16f4612fdb0f40b0542571b8003.jpg" width="600" height="400">&lt;/a>
+&lt;p>Your browser doesn't support embedded videos, but don't worry, you can &lt;a href="../../post/hello-world/input.mp4">download it&lt;/a> and watch it with your favorite video player!&lt;/p>
+&lt;/video></description></item></channel></rss>
