@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>doh on Mole of tales</title><link>https://icpmoles.github.io/tags/doh/</link><description>Recent content in doh on Mole of tales</description><generator>Hugo -- gohugo.io</generator><language>en-en</language><lastBuildDate>Fri, 07 May 2021 09:03:07 +0000</lastBuildDate><atom:link href="https://icpmoles.github.io/tags/doh/index.xml" rel="self" type="application/rss+xml"/><item><title>Enable DoH when Chrome is managed</title><link>https://icpmoles.github.io/post/chrome-doh/</link><pubDate>Fri, 07 May 2021 09:03:07 +0000</pubDate><guid>https://icpmoles.github.io/post/chrome-doh/</guid><description>&lt;p>For whatever reason your browser is locked out from changing the &lt;abbr title="DNS over HTTPS">DoH&lt;/abbr> settings? Here is how to change the settings if you have admin permissions.&lt;/p>
+&lt;p>It happened to me to buy a new laptop. This laptop comes with all the usual OEM stuff to manage security and updates. One of those software scans every downloaded file and marks its origin. To do that the software enables the &lt;code>GroupPolicyUsers&lt;/code> and installs an extension.&lt;/p>
+&lt;p>Ok, cool but now whenever I want to change some Chrome (or even Firefox) settings I&amp;rsquo;m greeted with this message:&lt;/p>
+&lt;p>
+&lt;img alt="" src="https://icpmoles.github.io/post/chrome-doh/admin_warning.png" />
+&lt;/p>
+&lt;p>Since I wanted to use my NextDNS account I had to fix this.&lt;/p>
+&lt;p>First try was removing the User Policy by using a simble bash script found somewhere online&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#c9c9c9;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1&lt;/span>&lt;span>@echo off
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3&lt;/span>&lt;span>IF NOT EXIST %WINDIR%&lt;span style="color:#56b6c2">\\&lt;/span>System32&lt;span style="color:#56b6c2">\\&lt;/span>GroupPolicy goto next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5&lt;/span>&lt;span>&lt;span style="color:#7fbaf5">echo&lt;/span> Deleting GroupPolicy folder...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6&lt;/span>&lt;span>RD /S /Q &lt;span style="color:#82cc6a">&amp;#34;%WINDIR%\\System32\\GroupPolicy&amp;#34;&lt;/span> &lt;span style="color:#bc74c4">||&lt;/span> goto error
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7&lt;/span>&lt;span>echo.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9&lt;/span>&lt;span>:next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10&lt;/span>&lt;span>IF NOT EXIST %WINDIR%&lt;span style="color:#56b6c2">\\&lt;/span>System32&lt;span style="color:#56b6c2">\\&lt;/span>GroupPolicyUsers goto next2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12&lt;/span>&lt;span>&lt;span style="color:#7fbaf5">echo&lt;/span> Deleting GroupPolicyUsers folder...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13&lt;/span>&lt;span>RD /S /Q &lt;span style="color:#82cc6a">&amp;#34;%WINDIR%\\System32\\GroupPolicyUsers&amp;#34;&lt;/span> &lt;span style="color:#bc74c4">||&lt;/span> goto error
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14&lt;/span>&lt;span>echo.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16&lt;/span>&lt;span>:next2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17&lt;/span>&lt;span>gpupdate /force
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19&lt;/span>&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20&lt;/span>&lt;span>&lt;span style="color:#7fbaf5">exit&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21&lt;/span>&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22&lt;/span>&lt;span>:error
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23&lt;/span>&lt;span>echo.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24&lt;/span>&lt;span>&lt;span style="color:#7fbaf5">echo&lt;/span> An unexpected error has occurred. ¨Have opened the program as an administrator &lt;span style="color:#bc74c4">(&lt;/span>right click, run as administrator&lt;span style="color:#bc74c4">)&lt;/span>?
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25&lt;/span>&lt;span>echo.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26&lt;/span>&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27&lt;/span>&lt;span>exit&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Look at all the delete folder commands so close to &lt;code>System32&lt;/code>, that absolutely doesn&amp;rsquo;t make nervous.&lt;/p>
+&lt;p>But this resetted at every boot. A more robust soultion was needed.&lt;/p>
+&lt;p>Removing the OEM security software? I was afraid of breaking some weird software integration with the fingerprint and boot security software. 😅&lt;/p>
+&lt;p>Now the final solution: If you can&amp;rsquo;t remove the User Policy use it.&lt;/p>
+&lt;p>Looking up about the various admin policies on the &lt;a href="https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DnsOverHttpsMode">Google Chrome&lt;/a> website it&amp;rsquo;s possibile to find the ones useful for us: &lt;code>DnsOverHttpsMode&lt;/code> and &lt;code>DnsOverHttpsTemplates&lt;/code>.&lt;/p>
+&lt;p>Just set &lt;code>DnsOverHttpsMode&lt;/code> to &lt;code>secure&lt;/code> or &lt;code>automatic&lt;/code> depending if you want it to not have an insecure fallback.&lt;/p>
+&lt;p>Then &lt;code>DnsOverHttpsTemplates&lt;/code> you need to fill your DoH provider.&lt;/p>
+&lt;p>The &lt;a href="https://chromeenterprise.google/policies/#DnsOverHttpsTemplates">Chrome Policy&lt;/a> is a bit confusing but you just need to take the &lt;code>https&lt;/code> URL and add &lt;code>/dns-query{?dns}&lt;/code> after it (&lt;a href="https://tools.ietf.org/html/rfc8484#section-4.1.1">better explaination&lt;/a>).&lt;/p>
+&lt;p>So if NextDNS provides you with &lt;code>https://dns.nextdns.io/123abc&lt;/code> your URL to fill is &lt;code>https://dns.nextdns.io/123abc/dns-query{?dns}&lt;/code>&lt;/p>
+&lt;p>Here is a list of various DoH providers with everything already filled in:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Provider&lt;/th>
+&lt;th>Standard&lt;/th>
+&lt;th>Family Protection&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>AdGuard&lt;/td>
+&lt;td>&lt;code>https://dns.adguard.com/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;td>&lt;code>https://dns-family.adguard.com/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cloudflare&lt;/td>
+&lt;td>&lt;code>https://cloudflare-dns.com/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;td>&lt;code>https://family.cloudflare-dns.com/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Google&lt;/td>
+&lt;td>&lt;code>https://dns.google/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;td>NA&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>OpenDNS&lt;/td>
+&lt;td>&lt;code>https://doh.opendns.com/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;td>&lt;code>https://doh.familyshield.opendns.com/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Quad9&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>&lt;code>https://dns.quad9.net/dns-query{?dns}&lt;/code>&lt;/td>
+&lt;td>NA&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Bot how to enable it? You can edit manual through &lt;code>regedit&lt;/code> or you can copy this code in a new file and save it with a &lt;code>.reg&lt;/code> extension. You can directly insert your DNS of choice in place of the default Google one.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-linenos=inline" data-lang="linenos=inline">Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+&amp;#34;DnsOverHttpsTemplates&amp;#34;=&amp;#34;https://dns.google/dns-query{?dns}&amp;#34;
+&amp;#34;DnsOverHttpsMode&amp;#34;=&amp;#34;automatic&amp;#34;&lt;/code>&lt;/pre>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Be aware that they provide different hostnames with different features like ECS etc. &lt;a href="https://www.quad9.net/news/blog/doh-with-quad9-dns-servers/#:~:text=quad9%20supports%20three%20flavors%20of%20dns%20currently.">Quad9&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

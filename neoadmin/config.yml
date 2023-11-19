@@ -1,0 +1,36 @@
+backend:
+  name: github
+  repo: icpmoles/neocity
+  branch: main
+
+
+media_folder: "site/static/img" # Folder where user uploaded files should go
+public_folder: "img"
+
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "content/posts/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Intro Blurb", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "micro" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Microes" # Used in the UI, ie.: "New Post"
+    folder: "content/micro/" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - { label: 'Tags', name: 'tags', widget: 'list', required: false, allow_add: true  }
+      - {label: "Draft", name: "draft", widget: "boolean" , default: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Text", name: "body", widget: "markdown" , required: true }
+      - {label: 'Category', name: 'categories', widget: 'list', required: true , default: "tweet", allow_add: true }
