@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamic of Mechanical Systems on NA of Moles</title><link>https://icpmoles.github.io/tags/dynamic-of-mechanical-systems/</link><description>Recent content in Dynamic of Mechanical Systems on NA of Moles</description><generator>Hugo -- gohugo.io</generator><language>en-en</language><lastBuildDate>Sat, 18 Nov 2023 21:44:03 +0100</lastBuildDate><atom:link href="https://icpmoles.github.io/tags/dynamic-of-mechanical-systems/index.xml" rel="self" type="application/rss+xml"/><item><title>Static Preload</title><link>https://icpmoles.github.io/post/static-preload/</link><pubDate>Sat, 18 Nov 2023 21:44:03 +0100</pubDate><guid>https://icpmoles.github.io/post/static-preload/</guid><description>&lt;p>A simple method to calculate the static preload in a lumped body multi Degrees of Freedom system&lt;/p>
+&lt;h2 id="tldr" clas=" mark rss xml">tl,dr:&lt;/h2>
+&lt;aside class="notification-boxes" style="color:var(--t-blue);border-left-color:var(--blue);background:var(--c-blue); ">
+&lt;span class="blocktitle" > Final Formula&lt;/span>&lt;br>
+&lt;p> &lt;p>Given a system of \(s\) springs and \(n\) bodies in \(N\) degrees of freedom, we can calculate the static preload of our springs at equilibrium by:
+$$ \vec {\Delta l_o} = [A]^{-1}[b] $$&lt;/p>
+&lt;p>with \( \vec {\Delta l_o} \) as the vector of our \(s\) ordered solution, with&lt;/p>
+&lt;p>$$ [A]=[\lambda_k]^T[k_{ph}]$$ and $$[b]=-g[\lambda_g]^T\vec m_{ph} $$&lt;/p>
+&lt;p>\([\lambda_k]\) is our standard lagrangian matrix for the springs, \([\lambda_g]\) instead is built by selecting the components of vertical displacement from \([\lambda_m]\) (lagrangian matrix of the inertial terms) and \(\vec m_{ph}\) as the list of masses in column form.&lt;/p>
+&lt;/p>
+&lt;/aside>
+&lt;h2 id="proof-1-dof-case" clas=" mark rss xml">Proof 1-DOF case&lt;/h2>
+&lt;p>Let&amp;rsquo;s start by defining our problem. \(x\) is our free coordinate, so we have:&lt;/p>
+&lt;p>$$ V(x) = V_k(x) + V_g(x) $$&lt;/p>
+&lt;p>\(V\) is the potential energy of our system and it can be divided into an elastic component \( V_k \) and a gravitational component \( V_g \).&lt;/p>
+&lt;p>The equilibrium is defined as the point \(x_0\) so that $$ \frac{\partial V}{\partial x}\rvert_{x_0}=0 $$
+$$ \frac{\partial V_k}{\partial x}\rvert_{x_0}+\frac{\partial V_g}{\partial x}\rvert_{x_0}=0 $$&lt;/p>
+&lt;p>To simplify our math let&amp;rsquo;s suppose that \(x_0=0\) (it&amp;rsquo;s a simple change of coordinates that will help in the N-dof case).&lt;/p>
+&lt;p>The first step is to derive the components of the potential energy:&lt;/p>
+&lt;h3 id="elastic-energy-1-dof" clas=" mark rss xml">Elastic energy 1-dof&lt;/h3>
+&lt;p>\(V_k\) describes the energy stored in an ideal linear spring with Hooke&amp;rsquo;s coefficient \(k\) subject to a deformation \( \Delta l\)&lt;/p>
+&lt;p>$$ V_k(x) = \sum_{i=1}^{s} \frac{1}{2} k_i \Delta l_i^2(x) $$&lt;/p>
+&lt;p>We can ignore the index for now and express \( \Delta l (x)\) as \( \Delta l(x) = l(x) - l_r \), with \(l(x)\) as the total length of our spring and \(l_r\) as the initial length of the spring at resting position, thus giving us the convention of positive sign for tension and negative sign for compression of our spring.&lt;/p>
+&lt;p>We can expand it as: $$ \Delta l(x) \approx \Delta l(0) + \frac{\partial \Delta l }{\partial x}\rvert_{x=0} x +\frac{1}{2}\frac{\partial^2 \Delta l }{\partial x^2}\rvert_{x=0} x^2 =\Delta l_0 + \lambda_k(0)x + \frac{1}{2}\nu_k(0)x^2 $$&lt;/p>
+&lt;p>We are going to square and derive this expression, so every term of \(x\) with power greater or equal than two \( \{ x^n : n\geq 2 \} \) is going to show up as a function of \(x^{n-1}\) and when evaluated at \(x=0\) they simply dissapear.
+$$ \Delta l(x)\rvert_{x=0} \approx \Delta l_0 + \lambda_k(0)x = \Delta l_0 + \lambda_{k0} x $$
+When putting it back into the sum we get:&lt;/p>
+&lt;p>$$ V_k(x) \rvert_{x=0} \approx \sum_{i=1}^{s} \frac{1}{2} k_i (\Delta l_{i0} + \lambda_{ik0} x )^2 = \sum_{i=1}^{s} \frac{1}{2} k_i (\Delta l_{i0}^2 + \lambda_{ik0}^2 x^2 + 2 \Delta l_{i0} \lambda_{ik0} x ) $$&lt;/p>
+&lt;p>Let&amp;rsquo;s evaluate the derivative in respect to \(x\):&lt;/p>
+&lt;p>\(\Delta l_0^2\) is a constant and gets eliminated by the derivative, the other sqare term becomes \(\lambda_{k0}^2 x\) and goes to zero when evaluated at \(x=0\), so only the mixed term \(2\Delta l_o \lambda_{k0} x\) survives and the derivative becomes:&lt;/p>
+&lt;p>$$ \frac {\partial V_k }{\partial x}\rvert_{x=0}= \sum_{i=1}^s k_i \Delta l_{i0} \lambda_{ik0} $$&lt;/p>
+&lt;p>We can rewrite this in vector form as:&lt;/p>
+&lt;p>$$ [k_{ph}] = diag(k_1; k_2; &amp;hellip; ; k_s) $$&lt;/p>
+&lt;p>$$ \vec {\Delta l_0 } = [ \Delta l_{10}; \Delta l_{20}; &amp;hellip; ; \Delta l_{s0}] $$&lt;/p>
+&lt;p>$$ \vec \lambda_{k} = [\lambda_{1k};\lambda_{2k};&amp;hellip;;\lambda_{sk}] $$&lt;/p>
+&lt;p>$$ \frac{\partial V_g(x)}{\partial x}\rvert_{x=0} = \vec \lambda_{k}^T [k_{ph}] \vec {\Delta l_0 } $$&lt;/p>
+&lt;h3 id="gravitational-energy-1-dof" clas=" mark rss xml">Gravitational energy 1-dof&lt;/h3>
+&lt;p>$$ V_g(x) = g \sum_{j=1}^n m_j h_j(x) $$&lt;/p>
+&lt;p>This expresses the total gravitational energy in our system supposing \(n\) bodies with mass \(m_j\) and height \(h_j\) measured from an arbitrary system of coordinates.&lt;/p>
+&lt;p>Applying the same concepts as the elastic term we get:&lt;/p>
+&lt;p>$$ h(x)\rvert_{x=0} \approx h(x)\rvert_{0}+\frac{\partial h}{\partial x}\rvert_{0}x+\frac{1}{2}\frac{\partial^2 h}{\partial x^2}\rvert_{0} x^2 $$&lt;/p>
+&lt;p>Let&amp;rsquo;s focus on the lower order terms and we get:&lt;/p>
+&lt;p>$$ h(x)\rvert_{x=0} \approx h_{0}+\lambda_gx$$&lt;/p>
+&lt;p>In this context \(\lambda_g\) is the linearized displacement of the height at equilibrium.&lt;/p>
+&lt;p>$$ V_g(x) = g \sum_{j=1}^n m_j (h_{j0}+\lambda_{jg}x) $$&lt;/p>
+&lt;p>Deriving it we get&lt;/p>
+&lt;p>$$ \frac{\partial V_g(x)}{\partial x}\rvert_{x=0}=g \sum_{j=1}^n m_j \lambda_{jg} $$&lt;/p>
+&lt;p>Let&amp;rsquo;s put everything in vector form&lt;/p>
+&lt;p>$$ \vec {m_{ph}} = \begin{bmatrix}
+m_1 \\ m_2 \\ \vdots \\ m_n
+\end{bmatrix} $$&lt;/p>
+&lt;p>$$ \vec \lambda_{g} =
+\begin{bmatrix}
+\lambda_{1g} \\ \lambda_{2g}\\ \vdots \\ \lambda_{ng}
+\end{bmatrix}
+$$&lt;/p>
+&lt;p>$$ \frac{\partial V_g(x)}{\partial x}\rvert_{x=0} = g \vec \lambda_{g}^T \vec {m_{ph}} $$&lt;/p>
+&lt;h3 id="final-expression" clas=" mark rss xml">Final expression&lt;/h3>
+&lt;p>$$ \frac{\partial V_k}{\partial x}\rvert_{x_0}+\frac{\partial V_g}{\partial x}\rvert_{x_0}=0 $$&lt;/p>
+&lt;p>$$ \vec \lambda_{k}^T [k_{ph}] \vec {\Delta l_0 } + g \vec \lambda_{g}^T \vec {m_{ph}} = 0 $$&lt;/p>
+&lt;p>To find \( \vec {\Delta l_0 } \) we just rearrange it as:&lt;/p>
+&lt;p>$$ \vec {\Delta l_0 } = -g(\vec \lambda_{k}^T [k_{ph}])^{-1} \vec \lambda_{g}^T \vec {m_{ph}} = [A]^{-1}\vec b $$&lt;/p>
+&lt;h2 id="n-dof-case" clas=" mark rss xml">N-DOF case&lt;/h2>
+&lt;p>We follow the same procedure but now we have additional dimensions for our \(\vec x\):&lt;/p>
+&lt;p>$$ \vec x =
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_N
+\end{bmatrix}
+$$&lt;/p>
+&lt;p>So we need to evaluate the gradient of our potential energy funcion for the equilibrium:&lt;/p>
+&lt;p>$$ \frac{\partial V(\vec x)}{\partial \vec x}\rvert_{\vec x= \vec 0} =
+\begin{bmatrix}
+\frac{\partial V(\vec x)}{\partial x_1} \\
+\frac{\partial V(\vec x)}{\partial x_2} \\
+\vdots \\
+\frac{\partial V(\vec x)}{\partial x_N}
+\end{bmatrix}\rvert_{\vec x= \vec 0} =\vec 0$$&lt;/p>
+&lt;p>$$ \nabla V(\vec x)\rvert_{\vec x= \vec 0} = \nabla V_k(\vec x)\rvert_{\vec x= \vec 0} + \nabla V_g(\vec x)\rvert_{\vec x= \vec 0} = \vec 0$$&lt;/p>
+&lt;h3 id="elastic-energy" clas=" mark rss xml">Elastic energy&lt;/h3>
+&lt;p>$$ V_k (\vec x)=\frac{1}{2}\sum_{i=1}^{s}k_i\Delta l_i^2(\vec x) =
+\frac{1}{2} \vec{\Delta l_0}^T (\vec x) k_{ph} \vec{\Delta l_0(\vec x)}
+$$&lt;/p>
+&lt;p>with&lt;/p>
+&lt;p>$$ k_{ph}=diag(k1,k2,&amp;hellip;,ks)$$
+$$ \vec{\Delta l_0}(\vec x) = \begin{bmatrix}
+\Delta l_{10}(\vec x) \\
+\Delta l_{20}(\vec x) \\
+\vdots \\
+\Delta l_{N0}(\vec x)
+\end{bmatrix}
+$$&lt;/p>
+&lt;p>As usual we expand our \(\Delta l(\vec x)\) near the equilibrium:&lt;/p>
+&lt;p>$$ \vec{\Delta l(\vec x)} \rvert_{\vec x=\vec 0} \approx \vec {\Delta l(\vec 0)} + \frac{\partial \Delta l }{\partial \vec x}\rvert_{\vec x= \vec 0} \vec x +\frac{1}{2}\frac{\partial^2 \Delta l }{\partial x^2}\rvert_{\vec x= \vec 0} \vec x^2 = \vec{\Delta l_0} + [\lambda_k(0)]\vec x + \frac{1}{2}\vec x^T[\nu_k(0)]\vec x $$&lt;/p>
+&lt;p>and we simplify it as:
+$$ \vec{\Delta l(\vec x)}\rvert_{\vec x=\vec 0} \approx \vec{\Delta l_0} + [\lambda_k(0)] \vec x = \vec{\Delta l_0} + [\lambda_{k0}] \vec x $$&lt;/p>
+&lt;p>Plugging it into the initial equation we get:&lt;/p>
+&lt;p>$$ V_k (\vec x) \rvert_{\vec x=\vec 0} \approx
+\frac{1}{2} (\vec {\Delta l_{0}} + [\lambda_{k0}] \vec x)^T [k_{ph}] (\vec {\Delta l_{0}} + [\lambda_{k0}] \vec x) = $$
+$$ = \frac{1}{2}(
+\vec x^T[\lambda_{k0}]^T [k_{ph}] [\lambda_{k0}] \vec x +
+\vec {\Delta l_{0}}^T[k_{ph}] \vec {\Delta l_{0}} +
+\vec {\Delta l_{0}}^T[k_{ph}] [\lambda_{k0}] \vec x +
+\vec x^T[\lambda_{k0}]^T [k_{ph}] \vec {\Delta l_{0}} )
+$$&lt;/p>
+&lt;p>Like for our 1-DOF case the only terms that survive the gradient are the mixed ones:&lt;/p>
+&lt;p>$$ \nabla V_k\rvert_{\vec x= \vec 0}= \frac{\partial V_k}{\partial \vec x} (\vec x) \rvert_{\vec x=\vec 0} \approx
+\frac{1}{2} (\vec {\Delta l_{i0}}^T[k_{ph}] [\lambda_{ik0}] + [\lambda_{k0}]^T [k_{ph}] \vec {\Delta l_{0}} ) = [\lambda_{k0}]^T [k_{ph}] \vec {\Delta l_{0}}
+$$&lt;/p>
+&lt;h3 id="gravitational-energy" clas=" mark rss xml">Gravitational Energy&lt;/h3>
+&lt;p>This must be straightforward now if you understood the past passages but for completeness let&amp;rsquo;s write them down:&lt;/p>
+&lt;p>$$ V_g(\vec x) = g \vec h(\vec x)^T \vec {m_{ph}} $$&lt;/p>
+&lt;p>with&lt;/p>
+&lt;p>$$ \vec m_{ph}= \begin{bmatrix}
+m_1 \\ m_2 \\ \vdots \\ m_n
+\end{bmatrix} $$&lt;/p>
+&lt;p>$$ \vec h(\vec x) = \begin{bmatrix}
+h_1(\vec x) \\ h_2(\vec x) \\ \vdots \\ h_n(\vec x)
+\end{bmatrix} $$&lt;/p>
+&lt;p>Expanding the height we get:&lt;/p>
+&lt;p>$$ \vec h(\vec x)\rvert_{\vec x=\vec 0} \approx \vec h(\vec x)\rvert_{\vec 0}+\frac{\partial \vec h}{\partial \vec x}\rvert_{\vec 0}\vec x+\frac{1}{2}\frac{\partial^2 h}{\partial \vec x \partial \vec x}\rvert_{\vec 0} \vec x^2 = \vec h_0 + [\lambda_k(0)]\vec x+ \frac{1}{2}\vec x^T[\nu_k(0)]\vec x$$&lt;/p>
+&lt;p>Picking just the linear and terms we get:&lt;/p>
+&lt;p>$$ \vec h(\vec x)\rvert_{\vec x=\vec 0} \approx \vec h_{0}+[\lambda_g]\vec x$$&lt;/p>
+&lt;p>Transposing and putting it back in the original energy expression we get:&lt;/p>
+&lt;p>$$ V_g(\vec x)\rvert_{\vec 0} = g ( \vec h_0^T + \vec x^T [\lambda_g]^T)\vec {m_{ph}} $$&lt;/p>
+&lt;p>Deriving it we get&lt;/p>
+&lt;p>$$ \nabla V_g\rvert_{\vec x= \vec 0} = \frac{\partial V_g(\vec x)}{\partial \vec x}\rvert_{x=0}=g [\lambda_g]^T \vec{m_{ph}} $$&lt;/p>
+&lt;h3 id="final-formula" clas=" mark rss xml">Final formula&lt;/h3>
+&lt;p>$$ \nabla V\rvert_{\vec x= \vec 0} = \nabla V_k\rvert_{\vec x= \vec 0} + \nabla V_g\rvert_{\vec x= \vec 0} = 0 $$&lt;/p>
+&lt;p>$$ [\lambda_{k0}]^T [k_{ph}] \vec {\Delta l_{0}} = -g [\lambda_g]^T \vec{m_{ph}} $$&lt;/p>
+&lt;p>$$[A]=[\lambda_{k0}]^T [k_{ph}] $$&lt;/p>
+&lt;p>$$ \vec b = -g [\lambda_g]^T \vec{m_{ph}} $$&lt;/p>
+&lt;p>$$ \vec {\Delta l_{0}} = [A]^{-1}\vec b $$&lt;/p></description></item></channel></rss>
