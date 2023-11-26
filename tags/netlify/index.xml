@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>netlify on NA of Moles</title><link>https://icpmoles.github.io/tags/netlify/</link><description>Recent content in netlify on NA of Moles</description><generator>Hugo -- gohugo.io</generator><language>en-en</language><lastBuildDate>Tue, 04 May 2021 20:07:30 +0000</lastBuildDate><atom:link href="https://icpmoles.github.io/tags/netlify/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo rendering: Github Pages vs Netlify vs Cloudflare Pages</title><link>https://icpmoles.github.io/post/hosting-comparisons/</link><pubDate>Tue, 04 May 2021 20:07:30 +0000</pubDate><guid>https://icpmoles.github.io/post/hosting-comparisons/</guid><description>&lt;p>Given the various choices of hosting for your static files you may be unsure which one to pick.
+These are the features and performances of the top three services with their free tier.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Features&lt;/th>
+&lt;th>Github Pages&lt;/th>
+&lt;th>Cloudflare Pages&lt;/th>
+&lt;th>Netflify&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Multiple subomains&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>Max 10&lt;/td>
+&lt;td>Infinite&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Custom subdomains&lt;/td>
+&lt;td>Fixed to [github username].github.io&lt;/td>
+&lt;td>Fixed to [github repo name].pages.dev&lt;/td>
+&lt;td>*.netlify.app&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Ease of Setup&lt;/td>
+&lt;td>Low&lt;/td>
+&lt;td>High&lt;/td>
+&lt;td>High&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>SSLlabs score&lt;/td>
+&lt;td>A&lt;/td>
+&lt;td>B&lt;/td>
+&lt;td>A&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Byte Serving for video&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>❌ &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Monthly Bandwith&lt;/td>
+&lt;td>100GB&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>100GB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Builds limits&lt;/td>
+&lt;td>10 builds per hour&lt;/td>
+&lt;td>500 times per month&lt;/td>
+&lt;td>300 minutes per month&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Maximum file size&lt;/td>
+&lt;td>100 MB&lt;/td>
+&lt;td>25 MB&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Storage Size&lt;/td>
+&lt;td>5 GB&lt;/td>
+&lt;td>n/a&lt;/td>
+&lt;td>100 GB&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Build Previews&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Test Build: Hugo&lt;/td>
+&lt;td>1597 ms&lt;/td>
+&lt;td>1320 ms&lt;/td>
+&lt;td>1852 ms&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Test Build: Total&lt;/td>
+&lt;td>33s&lt;/td>
+&lt;td>58s&lt;/td>
+&lt;td>40s&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Download times: 4.252 Kb HTML &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;/td>
+&lt;td>239 ms&lt;/td>
+&lt;td>245ms&lt;/td>
+&lt;td>492 ms&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>As you can see from the table and from the graph, downloading the test file usually takes 200-250ms on Github Pages and Cloudflare, while on Netlify the times as 2 times longer with a more unreliable time for the latter.&lt;/p>
+&lt;iframe title="Time for each request" aria-label="Interactive line chart" id="datawrapper-chart-IlvdX" src="https://datawrapper.dwcdn.net/IlvdX/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" loading="lazy">&lt;/iframe>&lt;script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&amp;&amp;(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+&lt;/script>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>All three offer you to use your own domain name.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2">
+&lt;p>Probably they do it to avoid abuse and to not compete with the &lt;a href="https://www.cloudflare.com/products/cloudflare-stream/">Cloudflare Stream&lt;/a> products.&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3">
+&lt;p>Average of 200 tests with &lt;a href="https://github.com/reorx/httpstat">httpstat&lt;/a> against a &lt;a href="../../lorem">test page&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>
