@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: icpmoles.github.io
+Token: 7eaaf3b0ff9e68e506f955a38e94f4caa4b2a5eb3ab9a389761cd183b104f292
