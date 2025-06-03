@@ -5,7 +5,9 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
+  schedule:
+    # Runs "at minute 27 past every 5 hour on thursday" (see https://crontab.guru)
+    - cron: '27 */5 * * 4'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
