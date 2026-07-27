@@ -3,3 +3,8 @@ Disallow: /
 
 User-agent: *
 Allow: /ControlTutorial
+Allow: /zeroprobe
+
+
+Sitemap: https://pages.icpmol.es/ControlTutorial/sitemap.xml
+Sitemap: https://pages.icpmol.es/zeroprobe/sitemap.xml
