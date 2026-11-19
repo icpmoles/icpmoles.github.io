@@ -4,6 +4,7 @@ Disallow: /
 User-agent: *
 Allow: /ControlTutorial
 Allow: /zeroprobe
+Allow: /usb_quadtree
 
 
 Sitemap: https://pages.icpmol.es/ControlTutorial/sitemap.xml
